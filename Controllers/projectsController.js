@@ -25,6 +25,8 @@ const createProject = async(req, res)=>{
 
         if(pool.connected){
 
+            console.log(req.body);
+
         const result = await pool.request()
         .input('id', mssql.VarChar, id)
         .input('project_name', mssql.VarChar, project_name)

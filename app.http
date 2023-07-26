@@ -1,5 +1,6 @@
 POST http://localhost:4500/project
-# Content-Type: application/json
+Content-Type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA3YzI1OThmLTNjNWQtNGU1ZS1hNzhkLWRhOWMxNjI0YTZiZiIsImVfbmFtZSI6IlBhdWwgU2FuZ2EiLCJlbWFpbCI6InBhdWwubnlhbWF3aUB0aGVqaXR1LmNvbSIsInJvbGUiOiJ1c2VyIiwiaXNzZW50IjpmYWxzZSwiaWF0IjoxNjkwMzU3NjE3LCJleHAiOjE2OTAzOTM2MTd9.rwfMnVb0LiOq2GxdG1ZCtt3NNix5k-PcjWawTKNmbmA
 
 {
     "project_name": "Build Dam",
@@ -29,3 +30,31 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:4500/project/45a5c077-6e33-49b4-bf20-666b30a72404
+
+
+
+
+
+
+
+
+
+
+#### EMPLOYEE ROUTES
+POST http://localhost:4500/employee/register
+Content-Type: application/json
+
+{
+    "e_name": "Benard Siloma",
+    "email": "benard.masikonde@thejitu.com",
+    "password": "12345678"
+}
+
+### LOGIN
+POST http://localhost:4500/employee/login
+Content-Type: application/json
+
+{
+    "email": "paul.nyamawi@thejitu.com",
+    "password": "12345678"
+}
