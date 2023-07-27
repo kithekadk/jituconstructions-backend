@@ -14,4 +14,6 @@ BEGIN CATCH
 END CATCH
 
 
-SELECT * FROM employeesTable
+SELECT * FROM employeesTable;
+
+ALTER TABLE employeesTable ADD profile VARCHAR(500);

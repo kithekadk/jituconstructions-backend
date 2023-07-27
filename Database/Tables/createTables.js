@@ -45,6 +45,7 @@ const createEmployeesTable = async(req, res)=>{
                     e_name VARCHAR(200) NOT NULL,
                     email VARCHAR(200) UNIQUE NOT NULL,
                     password VARCHAR(500) NOT NULL,
+                    profile VARCHAR(500),
                     role VARCHAR(50) DEFAULT 'user',
                     issent BIT DEFAULT 0
                 )

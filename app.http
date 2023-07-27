@@ -1,6 +1,6 @@
 POST http://localhost:4500/project
 Content-Type: application/json
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA3YzI1OThmLTNjNWQtNGU1ZS1hNzhkLWRhOWMxNjI0YTZiZiIsImVfbmFtZSI6IlBhdWwgU2FuZ2EiLCJlbWFpbCI6InBhdWwubnlhbWF3aUB0aGVqaXR1LmNvbSIsInJvbGUiOiJ1c2VyIiwiaXNzZW50IjpmYWxzZSwiaWF0IjoxNjkwMzU3NjE3LCJleHAiOjE2OTAzOTM2MTd9.rwfMnVb0LiOq2GxdG1ZCtt3NNix5k-PcjWawTKNmbmA
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA3YzI1OThmLTNjNWQtNGU1ZS1hNzhkLWRhOWMxNjI0YTZiZiIsImVfbmFtZSI6IlBhdWwgU2FuZ2EiLCJlbWFpbCI6InBhdWwubnlhbWF3aUB0aGVqaXR1LmNvbSIsInJvbGUiOiJ1c2VyIiwiaXNzZW50Ijp0cnVlLCJwcm9maWxlIjpudWxsLCJpYXQiOjE2OTA0MDY1NzQsImV4cCI6MTY5MDQ0MjU3NH0.WHFKObc9Vb7HQemA8mtlp1aWIeBlpXhMGlG4MQYUGg0
 
 {
     "project_name": "Build Dam",
@@ -45,8 +45,9 @@ POST http://localhost:4500/employee/register
 Content-Type: application/json
 
 {
-    "e_name": "Benard Siloma",
-    "email": "benard.masikonde@thejitu.com",
+    "e_name": "Augustus Mutambu",
+    "email": "augkinyi@yopmail.com",
+    "profile": "https://cdn.pixabay.com/photo/2018/07/31/21/58/lion-3576031_640.jpg",
     "password": "12345678"
 }
 
@@ -58,3 +59,7 @@ Content-Type: application/json
     "email": "paul.nyamawi@thejitu.com",
     "password": "12345678"
 }
+
+### READ TOKEN
+GET http://localhost:4500/employee/check
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA3YzI1OThmLTNjNWQtNGU1ZS1hNzhkLWRhOWMxNjI0YTZiZiIsImVfbmFtZSI6IlBhdWwgU2FuZ2EiLCJlbWFpbCI6InBhdWwubnlhbWF3aUB0aGVqaXR1LmNvbSIsInJvbGUiOiJ1c2VyIiwiaXNzZW50Ijp0cnVlLCJwcm9maWxlIjpudWxsLCJpYXQiOjE2OTA0NDc5NDksImV4cCI6MTY5MDQ4Mzk0OX0.P-yp3CPT3EGK4rsEOLwmjm2tV7cqoQsPppmXwHqZfEY

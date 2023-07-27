@@ -12,7 +12,7 @@ const registerEmployee = async (req, res)=>{
     try {
         createEmployeesTable()
         const id = v4();
-        const {e_name, email, password} = req.body
+        const {e_name, email,profile, password} = req.body
 
         const {error} = registerSchema.validate(req.body)
 
@@ -28,6 +28,7 @@ const registerEmployee = async (req, res)=>{
         .input('id', id)
         .input('e_name', mssql.VarChar, e_name)
         .input('email', mssql.VarChar, email)
+        .input('profile', mssql.VarChar, profile)
         .input('password', mssql.VarChar, hashedPwd)
         .execute('registerEmployeePROC')
 
@@ -90,7 +91,19 @@ const employeeLogin = async(req, res)=>{
     }
 }
 
+const checkUser = async(req, res)=>{
+    if(req.info){
+        res.json({
+            info:req.info
+            // name:req.info.e_name,
+            // email: req.info.email,
+            // role: req.info.role
+        })
+    }
+}
+
 module.exports = {
     registerEmployee,
-    employeeLogin
+    employeeLogin,
+    checkUser
 }
