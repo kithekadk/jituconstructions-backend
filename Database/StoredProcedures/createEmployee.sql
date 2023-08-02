@@ -4,4 +4,4 @@ BEGIN
     INSERT INTO employeesTable(id, e_name, email, profile, password) VALUES(@id, @e_name, @email, @profile, @password)
 END
 
-SELECT * FROM employeesTable;
+-- SELECT * FROM employeesTable;

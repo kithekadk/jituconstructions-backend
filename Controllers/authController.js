@@ -1,6 +1,7 @@
 const mssql = require('mssql')
 const bcrypt = require ('bcrypt')
 const jwt = require('jsonwebtoken')
+const crypto =  require('crypto')
 const {v4} = require ('uuid')
 const { createEmployeesTable } = require('../Database/Tables/createTables')
 const { sqlConfig } = require('../Config/config')
@@ -10,9 +11,16 @@ dotenv.config()
 
 const registerEmployee = async (req, res)=>{
     try {
-        createEmployeesTable()
+        // createEmployeesTable()
+
         const id = v4();
         const {e_name, email,profile, password} = req.body
+
+        if(!e_name || !email || !profile || !password){
+            return res.status(400).json({
+                error: "Please input all values"
+            })
+        }
 
         const {error} = registerSchema.validate(req.body)
 
@@ -32,14 +40,14 @@ const registerEmployee = async (req, res)=>{
         .input('password', mssql.VarChar, hashedPwd)
         .execute('registerEmployeePROC')
 
-        console.log(result);
+        // console.log(result);
 
         if (result.rowsAffected == 1){
             return res.status(200).json({
                 message: 'Employee registered successfully'
             })
         }else{
-            return res.status(200).json({
+            return res.status(400).json({
                 message: 'Employee registration failed'
             })
         }
@@ -102,8 +110,17 @@ const checkUser = async(req, res)=>{
     }
 }
 
+const generateBytes = ()=>{
+    const bytes = crypto.randomBytes(20)
+    // console.log(bytes);
+    return bytes
+}
+
+generateBytes()
+
 module.exports = {
     registerEmployee,
     employeeLogin,
-    checkUser
+    checkUser,
+    generateBytes
 }
