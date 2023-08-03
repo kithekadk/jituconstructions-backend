@@ -77,9 +77,6 @@ const employeeLogin = async(req, res)=>{
         const pool = await mssql.connect(sqlConfig)
 
         const result = (await pool.request().input('email', email).execute('employeeLogin'))
-
-        // console.log(result);
-
         
         if(result?.rowsAffected == 1){
             const user = result.recordset[0]

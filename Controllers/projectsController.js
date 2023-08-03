@@ -3,19 +3,6 @@ const mssql = require ('mssql');
 const { sqlConfig } = require('../Config/config');
 const { createProjectsTable } = require('../Database/Tables/createTables');
 
-const projects = [];
-
-class Project{
-    constructor(id, project_name, project_location, description, startdate, enddate){
-        this.id = id,
-        this.project_name = project_name,
-        this.project_location = project_location,
-        this.description = description,
-        this.startdate = startdate,
-        this.enddate = enddate
-    }
-}
-
 const createProject = async(req, res)=>{
     try {
         // createProjectsTable()
@@ -53,15 +40,18 @@ const createProject = async(req, res)=>{
     }
 }
 
+
 const getProjects = async(req, res)=>{
     try {
         const pool = await (mssql.connect(sqlConfig))
 
-        const allproject = (await pool.request().execute('getAllProjects')).recordset
+        const allprojects = (await pool.request().execute('getAllProjects')).recordset
 
-        res.json({projects: allproject})
+        // console.log(allprojects);
+
+        return res.status(200).json({projects: allprojects})
     } catch (error) {
-        return res.json({error})
+        return res.json({error: error})
     }
 }
 
@@ -73,11 +63,11 @@ const getOneProject = async(req, res)=>{
 
         const project = (await pool.request().input('id', id).execute('getOneProject')).recordset
 
-        return res.json({
+        return res.status(200).json({
             project: project
         })
     } catch (error) {
-        return res.json({error})
+        return res.json({error:error})
     }
 }
 
@@ -99,14 +89,14 @@ const updateProject = async(req, res)=>{
 
         .execute('updateProject'));
 
-        console.log(result);
+        // console.log(result);
 
         if(result.rowsAffected == 1){
-            res.json({
+            res.status(200).json({
                 message: 'project updated successfully'
             })
         }else{
-            res.json({
+            res.status(400).json({
                 message: 'project not found'
             })
         }

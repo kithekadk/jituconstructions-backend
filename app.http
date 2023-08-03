@@ -14,12 +14,12 @@ token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA3YzI1OThmLTNjNWQtNGU1ZS1hN
 GET http://localhost:4500/project
 
 ### GET ONE PROJECT
-GET http://localhost:4500/project/1464dda6-5651-4d3c-8c1c-527d977e15d8
+GET http://localhost:4500/project/1464dda6-5651-4d3c-8c1c-527d977e15d8dsgdsgs
 
 ### UPDATING PROJECT
 PUT http://localhost:4500/project/1464dda6-5651-4d3c-8c1c-527d977e15d8
 Content-Type: application/json
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA3YzI1OThmLTNjNWQtNGU1ZS1hNzhkLWRhOWMxNjI0YTZiZiIsImVfbmFtZSI6IlBhdWwgU2FuZ2EiLCJlbWFpbCI6InBhdWwubnlhbWF3aUB0aGVqaXR1LmNvbSIsInJvbGUiOiJ1c2VyIiwiaXNzZW50Ijp0cnVlLCJwcm9maWxlIjpudWxsLCJpYXQiOjE2OTA5NjYyMTcsImV4cCI6MTY5MTAwMjIxN30.XhE3vYyvHxzTBkUMa3xewIWaXL0ZnUVhRD-G6QVsGnM
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk5ZjMyZjA0LWNhYWItNDNkMi1hMjEwLTZiZGYwYTMzMjBjNCIsImVfbmFtZSI6IkpvaG4gV2FjaGlyYSIsImVtYWlsIjoiam9obi53YWNoaXJhQHlvcG1haWwuY29tIiwicm9sZSI6InVzZXIiLCJpc3NlbnQiOmZhbHNlLCJwcm9maWxlIjoiaHR0cHM6Ly9jZG4ucGl4YWJheS5jb20vcGhvdG8vMjAxOC8wNy8zMS8yMS81OC9saW9uLTM1NzYwMzFfNjQwLmpwZyIsImlhdCI6MTY5MTA1NDAzMiwiZXhwIjoxNjkxMDkwMDMyfQ.HuxsAw6sVneIpvD9i377dQyaqXNtIbvRh5Vojc8UemM
 
 {
     "project_name": "Build A bridge",
@@ -30,8 +30,8 @@ token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA3YzI1OThmLTNjNWQtNGU1ZS1hN
 }
 
 ###
-DELETE http://localhost:4500/project/0b434978-02c5-4ea2-be3a-e8f5402c66b7
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA3YzI1OThmLTNjNWQtNGU1ZS1hNzhkLWRhOWMxNjI0YTZiZiIsImVfbmFtZSI6IlBhdWwgU2FuZ2EiLCJlbWFpbCI6InBhdWwubnlhbWF3aUB0aGVqaXR1LmNvbSIsInJvbGUiOiJ1c2VyIiwiaXNzZW50Ijp0cnVlLCJwcm9maWxlIjpudWxsLCJpYXQiOjE2OTA5NjYyMTcsImV4cCI6MTY5MTAwMjIxN30.XhE3vYyvHxzTBkUMa3xewIWaXL0ZnUVhRD-G6QVsGnM
+DELETE http://localhost:4500/project/1464dda6-5651-4d3c-8c1c-527d977e15d8
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk5ZjMyZjA0LWNhYWItNDNkMi1hMjEwLTZiZGYwYTMzMjBjNCIsImVfbmFtZSI6IkpvaG4gV2FjaGlyYSIsImVtYWlsIjoiam9obi53YWNoaXJhQHlvcG1haWwuY29tIiwicm9sZSI6InVzZXIiLCJpc3NlbnQiOmZhbHNlLCJwcm9maWxlIjoiaHR0cHM6Ly9jZG4ucGl4YWJheS5jb20vcGhvdG8vMjAxOC8wNy8zMS8yMS81OC9saW9uLTM1NzYwMzFfNjQwLmpwZyIsImlhdCI6MTY5MTA1NDc1MCwiZXhwIjoxNjkxMDkwNzUwfQ.vmp0qDYEMcoyWkBlOtgzYPOalGrm3lCXjpWlEzQRZUQ
 
 
 
@@ -57,7 +57,7 @@ POST http://localhost:4500/employee/login
 Content-Type: application/json
 
 {
-    "email": "john.wachikra@yopmail.com",
+    "email": "john.wachira@yopmail.com",
     "password": "12345678"
 }
 
