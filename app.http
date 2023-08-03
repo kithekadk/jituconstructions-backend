@@ -57,7 +57,7 @@ POST http://localhost:4500/employee/login
 Content-Type: application/json
 
 {
-    "email": "john.wachira@yopmail.com",
+    "email": "john.wachikra@yopmail.com",
     "password": "12345678"
 }
 

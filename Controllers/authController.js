@@ -62,20 +62,30 @@ const employeeLogin = async(req, res)=>{
     try {
         const {email, password} = req.body
 
-        const {error} = loginSchema.validate(req.body)
-        if(error){
-            return res.status(422).json(error.details)
+        if(!email || !password){
+            return res.status(400).json({
+                error: "Please input all values"
+            })
         }
+
+        // const {error} = loginSchema.validate(req.body)
+
+        // if(error){
+        //     return res.status(422).json(error.details)
+        // }
 
         const pool = await mssql.connect(sqlConfig)
 
-        const user = (await pool.request().input('email', email).execute('employeeLogin')).recordset[0]
+        const result = (await pool.request().input('email', email).execute('employeeLogin'))
 
-        // console.log(user);
+        // console.log(result);
 
-        const hashedPwd = user.password
+        
+        if(result?.rowsAffected == 1){
+            const user = result.recordset[0]
 
-        if(user){
+            const hashedPwd = user.password
+
             const comparePwd = await bcrypt.compare(password, hashedPwd)
    
             if(comparePwd){
@@ -87,7 +97,7 @@ const employeeLogin = async(req, res)=>{
                 })
             }else{
                 return res.status(400).json({
-                    message: 'Invalid login credentials'
+                    message: 'Incorrect password'
                 })
             }
         }else{
