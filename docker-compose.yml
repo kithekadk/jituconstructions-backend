@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  database:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: jituconstructionsdb
+    environment:
+      ACCEPT_EULA: Y
+      MSSQL_SA_PASSWORD: Dante99.
+      MSSQL_PID: Developer
+    env_file:
+      - /.env
+    ports:
+      - '1433:1433'
+    volumes:
+      - dbdata:/var/opt/mssql
+
+  server:
+    depends_on:
+      - database
+    build: ./
+    container_name: jituconstructionsserver
+    restart: always
+    env_file:
+      - ./.env
+    ports:
+      - '4500:4500'
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    
+volumes:
+  dbdata:

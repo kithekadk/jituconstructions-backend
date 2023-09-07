@@ -57,6 +57,57 @@ const registerEmployee = async (req, res)=>{
         return res.json({Error:error})
     }
 }
+const registerCaregiver = async (req, res)=>{
+    try {
+        // createEmployeesTable()
+
+        const id = v4();
+        const {full_name, email, phone_no, certification_no, certified_from, profile, password} = req.body
+
+        if(!full_name || !email || !phone_no || !certification_no || !certified_from || !profile || !password){
+            return res.status(400).json({
+                error: "Please input all values"
+            })
+        }
+
+        
+        // if(error){
+        //     return res.status(422).json(error.details)
+        // }
+        console.log('errorWW');
+
+        const hashedPwd = await bcrypt.hash(password, 5)
+
+        const pool = await mssql.connect(sqlConfig);
+
+        const result = await pool.request()
+        .input('id', id)
+        .input('full_name', mssql.VarChar, full_name)
+        .input('certification_no', mssql.VarChar, certification_no)
+        .input('certified_from', mssql.VarChar, certified_from)
+        .input('phone_no', mssql.VarChar, phone_no)
+        .input('email', mssql.VarChar, email)
+        .input('profile', mssql.VarChar, profile)
+        .input('password', mssql.VarChar, hashedPwd)
+        .execute('registerCaregiver')
+
+        console.log(result);
+
+        if (result.rowsAffected == 1){
+            return res.status(200).json({
+                message: 'Caregiver registered successfully'
+            })
+        }else{
+            return res.status(400).json({
+                message: 'Employee registration failed'
+            })
+        }
+
+
+    } catch (error) {
+        return res.json({Error:error})
+    }
+}
 
 const employeeLogin = async(req, res)=>{
     try {
@@ -129,5 +180,6 @@ module.exports = {
     registerEmployee,
     employeeLogin,
     checkUser,
+    registerCaregiver,
     generateBytes
 }
