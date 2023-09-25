@@ -13,6 +13,9 @@ token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA3YzI1OThmLTNjNWQtNGU1ZS1hN
 ### GET ALL PROJECTS
 GET http://localhost:4500/project
 
+
+
+
 ### GET ONE PROJECT
 GET http://localhost:4500/project/1464dda6-5651-4d3c-8c1c-527d977e15d8dsgdsgs
 
@@ -57,14 +60,17 @@ POST http://localhost:4500/employee/register_caregiver
 Content-Type: application/json
 
 {
-    "full_name": "Kevin Mathenge",
-    "email": "dan@gmail.com",
-    "phone_no":"0713234567",
+    "full_name": "Kevin Hart",
+    "email": "hart@gmail.com",
+    "phone_no":"0711434567",
     "certification_no": "12345678s",
-    "certified_from": "Carego",
-    "profile": "https://cdn.pixabay.com/photo/2018/07/31/21/58/lion-3576031_640.jpg",
+    "certified_from": "Trinity Care Center",
+    "profile": "url",
     "password": "12345678"
 }
+
+### GET CAREGIVERS
+GET http://localhost:4500/employee/get_caregivers
 
 ### LOGIN
 POST http://localhost:4500/employee/login

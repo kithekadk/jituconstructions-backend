@@ -109,6 +109,20 @@ const registerCaregiver = async (req, res)=>{
     }
 }
 
+const getCaregivers = async(req, res)=>{
+    try {
+        const pool = await (mssql.connect(sqlConfig))
+
+        const caregivers = (await pool.request().execute('getCaregivers')).recordset
+
+        console.log(caregivers);
+
+        return res.status(200).json({caregivers: caregivers})
+    } catch (error) {
+        return res.json({Error:error})
+    }
+}
+
 const employeeLogin = async(req, res)=>{
     try {
         const {email, password} = req.body
@@ -181,5 +195,7 @@ module.exports = {
     employeeLogin,
     checkUser,
     registerCaregiver,
-    generateBytes
+    getCaregivers,
+    generateBytes,
+
 }

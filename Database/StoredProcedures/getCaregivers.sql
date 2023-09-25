@@ -1,0 +1,5 @@
+CREATE OR ALTER PROCEDURE getCaregivers
+AS
+BEGIN 
+    SELECT * FROM caregiversTable
+END
