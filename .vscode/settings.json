@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/4d528989-4001-439b-b1e1-b1480d1bd3f8/resourceGroups/appsvc_linux_centralus_basic/providers/Microsoft.Web/sites/jituconstructions",
+    "appService.deploySubpath": "."
+}

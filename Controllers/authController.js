@@ -79,6 +79,7 @@ const registerCaregiver = async (req, res)=>{
         const hashedPwd = await bcrypt.hash(password, 5)
 
         const pool = await mssql.connect(sqlConfig);
+        console.log('connected')
 
         const result = await pool.request()
         .input('id', id)
@@ -105,6 +106,7 @@ const registerCaregiver = async (req, res)=>{
 
 
     } catch (error) {
+        console.trace(error)
         return res.json({Error:error})
     }
 }
