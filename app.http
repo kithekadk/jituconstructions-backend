@@ -70,7 +70,7 @@ Content-Type: application/json
 }
 
 ### GET CAREGIVERS
-GET http://localhost:4500/employee/get_caregivers
+GET http://13.39.15.164:4500/employee/get_caregivers
 
 ### LOGIN
 POST http://localhost:4500/employee/login
