@@ -1,5 +1,5 @@
 const {Router} = require('express');
-const { createProject, getProjects, getOneProject, updateProject, deleteProject } = require('../Controllers/ProjectsController.js');
+const { createProject, getProjects, getOneProject, updateProject, deleteProject } = require('../Controllers/projectsController.js');
 const { verifyToken } = require('../Middleware/verifyToken');
 
 const projectrouter = Router();
