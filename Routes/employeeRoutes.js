@@ -1,5 +1,5 @@
 const {Router} = require('express')
-const { registerEmployee, employeeLogin, checkUser, registerCaregiver, getCaregivers } = require('../Controllers/authController')
+const { registerEmployee, employeeLogin, checkUser, registerCaregiver, getCaregivers } = require('../Controllers/authController.js')
 const { verifyToken } = require('../Middleware/verifyToken')
 
 const employeerouter = Router()
