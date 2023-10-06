@@ -60,17 +60,17 @@ POST http://localhost:4500/employee/register_caregiver
 Content-Type: application/json
 
 {
-    "full_name": "Kevin Hart",
-    "email": "hart@gmail.com",
-    "phone_no":"0711434567",
-    "certification_no": "12345678s",
+    "full_name": "Karen Kim",
+    "email": "karen@gmail.com",
+    "phone_no":"0705795939",
+    "certification_no": "4745X48Yy",
     "certified_from": "Trinity Care Center",
-    "profile": "url",
+    "profile": "",
     "password": "12345678"
 }
 
 ### GET CAREGIVERS
-GET http://13.39.15.164:4500/employee/get_caregivers
+GET http://localhost:4500/employee/get_caregivers
 
 ### LOGIN
 POST http://localhost:4500/employee/login
@@ -83,4 +83,4 @@ Content-Type: application/json
 
 ### READ TOKEN
 GET http://localhost:4500/employee/check
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk5ZjMyZjA0LWNhYWItNDNkMi1hMjEwLTZiZGYwYTMzMjBjNCIsImVfbmFtZSI6IkpvaG4gV2FjaGlyYSIsImVtYWlsIjoiam9obi53YWNoaXJhQHlvcG1haWwuY29tIiwicm9sZSI6InVzZXIiLCJpc3NlbnQiOmZhbHNlLCJwcm9maWxlIjoiaHR0cHM6Ly9jZG4ucGl4YWJheS5jb20vcGhvdG8vMjAxOC8wNy8zMS8yMS81OC9saW9uLTM1NzYwMzFfNjQwLmpwZyIsImlhdCI6MTY5MTQ3OTA4MiwiZXhwIjoxNjkxNTE1MDgyfQ.wdMwR4vmIFuSdu4OkpoV14kmA4_6wuHz6pRjDSF2-eY
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM5OTg3NzY0LTU4MGQtNGI5OS1iMzdhLWZhYWY1MTc2MjgwNCIsImVfbmFtZSI6IktldmluIE1hdGhlbmdlIiwiZW1haWwiOiJkYW5AZ21haWwuY29tIiwicHJvZmlsZSI6Imh0dHBzOi8vY2RuLnBpeGFiYXkuY29tL3Bob3RvLzIwMTgvMDcvMzEvMjEvNTgvbGlvbi0zNTc2MDMxXzY0MC5qcGciLCJyb2xlIjoidXNlciIsImlzc2VudCI6ZmFsc2UsImlhdCI6MTY5NjUzMjEyMywiZXhwIjoxNjk2NTY4MTIzfQ.9x8tX5O8RGtUuvCFgJcIafjQdwJ9plTUd6xEW99lCnM
